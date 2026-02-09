@@ -31,5 +31,47 @@
  * @returns {number} Total price or -1 for invalid input
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
-  // Your code here
+  let total = 0;
+
+  switch (size) {
+    case "small":
+      total += 3.0;
+      break;
+    case "medium":
+      total += 4.0;
+      break;
+    case "large":
+      total += 5.0;
+      break;
+    default:
+      return -1; 
+  }
+
+  switch (type) {
+    case "regular":
+      total += 0;
+      break;
+    case "latte":
+      total += 1.0;
+      break;
+    case "cappuccino":
+      total += 1.5;
+      break;
+    case "mocha":
+      total += 2.0;
+      break;
+    default:
+      return -1; 
+  }
+
+  if (extras.whippedCream === true) {
+    total += 0.5;
+  }
+
+  if (extras.extraShot === true) {
+    total += 0.75;
+  }
+
+  return Number(total.toFixed(2));
 }
+
