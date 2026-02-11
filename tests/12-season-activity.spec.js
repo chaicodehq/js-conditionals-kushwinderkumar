@@ -75,6 +75,7 @@ describe('12 - WanderLust: Season & Activity Planner (8 pts)', () => {
       expect(result.activity).toBe('reading at a cafe');
     });
 
+    
     test('September, 15°C → Autumn, reading at a cafe (15 is <= 15)', () => {
       const result = getSeasonActivity(9, 15);
       expect(result.season).toBe('Autumn');
